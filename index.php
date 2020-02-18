@@ -1,1 +1,4 @@
-// hoi 4
+<?php
+header("Location: home/");
+exit();
+?>
