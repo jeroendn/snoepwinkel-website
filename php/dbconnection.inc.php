@@ -1,8 +1,13 @@
 <?php
-$servername = "remotemysql.com";
-$dBUsername = "lP6auGFw0s";
-$dBPassword = "G4si8h7zlq";
-$dBName = "lP6auGFw0s";
+// $servername = "remotemysql.com";
+// $dBUsername = "sEdqkIHteW";
+// $dBPassword = "za2hPp6sIR";
+// $dBName = "sEdqkIHteW";
+
+$servername = "localhost";
+$dBUsername = "root";
+$dBPassword = "";
+$dBName = "snoepwinkel";
 
 try {
 	$conn = new PDO("mysql:host=$servername;dbname=$dBName",$dBUsername,$dBPassword);
@@ -10,6 +15,5 @@ try {
 }
 catch(PDOException $e)
 {
-  echo "An error has occured: " . $e->getMessage();
+  ?><p>An error has occured: <?php echo $e->getMessage();?></p><?php
 }
-?>

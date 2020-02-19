@@ -24,3 +24,4 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
     <?php include_once __DIR__ . '../../php/js.inc.php' ?>
   </body>
 </html>
+Welkom op de homepagina
