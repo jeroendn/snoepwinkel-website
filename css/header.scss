@@ -1,0 +1,28 @@
+header#header {
+  height: 100px;
+  width: 100%;
+  background-color: #fff;
+  position: static;
+  transition: 500ms ease;
+  top: -100px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+
+  &.floating {
+    position: fixed;
+    top: 0;
+  }
+
+  .header-img {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+
+  #nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex: 0 0 80%;
+    max-width: 80%;
+  }
+}
