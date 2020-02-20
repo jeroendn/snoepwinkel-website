@@ -3,10 +3,30 @@
   margin-bottom: 30px;
 }
 
-.shop-grid .card {
+.shop-grid .row .card {
   min-width: 30%;
+  background-color: #c2cad0;
 }
 
-.shop-grid .card:not(:last-child) {
+.shop-grid .row .card:not(:last-child) {
   margin-right: 5%;
+}
+
+.shop-grid .row .card img {
+  height: 300px;
+  object-fit: cover;
+  background-color: #fff;
+}
+
+.shop-grid .row .card .card-body .card-subtitle {
+  color: #e7717d;
+  font-weight: bold;
+}
+
+.shop-grid .row .card .card-body .card-text {
+  min-height: 120px;
+}
+
+.shop-grid .row .card .card-body a.btn {
+  width: 49%;
 }

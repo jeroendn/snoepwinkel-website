@@ -7,16 +7,34 @@
     display: flex;
     margin-bottom: 30px;
 
+    .card {
+      min-width: 30%;
+      background-color: $blue;
 
-  }
+      &:not(:last-child) {
+        margin-right: 5%;
+      }
 
+      img {
+        height: 300px;
+        object-fit: cover;
+        background-color: #fff;
+      }
 
-  .card {
-    min-width: 30%;
+      .card-body {
+        .card-subtitle {
+          color: $pink;
+          font-weight: bold;
+        }
 
-    &:not(:last-child) {
-      margin-right: 5%;
+        .card-text {
+          min-height: 120px;
+        }
+
+        a.btn {
+          width: 49%;
+        }
+      }
     }
   }
-
 }

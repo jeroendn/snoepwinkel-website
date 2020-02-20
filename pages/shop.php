@@ -16,60 +16,41 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
 
     <main id="" class="page-content">
       <section class="shop-grid container mt-5">
+        <?php
+        $sql = "SELECT * FROM product ORDER BY product_date DESC LIMIT 50";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $row_product = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        <div class="row">
+        $count = 0;
+        $lastElement = end($row_product);
 
+        foreach ($row_product as $product) {
+          $count++;
+
+          if ($count == 1) {
+            echo '<div class="row">';
+          }
+
+          echo '
           <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="' . $product['product_img'] . '" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">' . $product['product_name'] . '</h5>
+              <h6 class="card-subtitle mb-2">&#8364;' . $product['product_price'] . ' per stuk</h6>
+              <p class="card-text">' . substr($product['product_desc'], 0, 180) . '...</p>
+              <a href="#" class="btn btn-primary">Bekijk</a>
+              <a href="#" class="btn btn-primary bg-danger">Winkelmand</a>
             </div>
           </div>
+          ';
 
-          <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="row">
-
-          <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-
-        </div>
-
+          if ($count == 3 || $product == $lastElement) {
+            echo '</div>';
+            $count = 0;
+          }
+        }
+        ?>
 
       </section>
     </main>
