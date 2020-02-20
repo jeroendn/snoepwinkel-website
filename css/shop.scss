@@ -1,0 +1,22 @@
+@import 'var.scss';
+
+.shop-grid {
+  // display: flex;
+
+  .row {
+    display: flex;
+    margin-bottom: 30px;
+
+
+  }
+
+
+  .card {
+    min-width: 30%;
+
+    &:not(:last-child) {
+      margin-right: 5%;
+    }
+  }
+
+}

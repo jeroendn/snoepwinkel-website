@@ -1,0 +1,12 @@
+.shop-grid .row {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.shop-grid .card {
+  min-width: 30%;
+}
+
+.shop-grid .card:not(:last-child) {
+  margin-right: 5%;
+}

@@ -9,6 +9,7 @@ header#header {
   justify-content: space-between;
   z-index: 2;
   background-color: #e7717d;
+  border-bottom: 2px solid #7e685a;
 }
 
 header#header.floating {

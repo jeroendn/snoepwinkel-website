@@ -4,4 +4,13 @@
   min-height: 300px;
   width: 100%;
   background-color: $pink;
+  border-top: 10px solid $brown;
+  display: flex;
+  align-items: flex-end;
+
+  #bottom-bar {
+    height: 50px;
+    width: 100%;
+    background: $green;
+  }
 }
