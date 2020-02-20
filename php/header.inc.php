@@ -1,17 +1,15 @@
 <header id="header">
-  <div class="header-img">
-    <a href="home">
-      <img src="">
-    </a>
+  <div class="header-logo">
+    <a href="home">De Snoepwinkel</a>
   </div>
 
-  <nav id="nav-wrapper" class="menu">
-    <ul id="main-menu">
+  <nav id="nav-wrapper">
+    <ul id="main-menu" class="menu">
       <li class="menu-item"><a href="home">home</a></li>
       <li class="menu-item"><a href="shop">shop</a></li>
     </ul>
     <ul id="menu-right" class="menu">
-      <li class="menu-item"><a href="cart">cart</a></li>
+      <li class="menu-item"><a href="cart" class="icon"></a></li>
     </ul>
   </nav>
 </header>

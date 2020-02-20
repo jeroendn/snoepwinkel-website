@@ -17,7 +17,7 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
     <main id="" class="page-content">
       <section class="container mt-5">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-6 mb-3">
             <img src="media/design/snoepwinkelsnoep.jpg" class="img-fluid">
           </div>
           <div class="col-sm-6">
