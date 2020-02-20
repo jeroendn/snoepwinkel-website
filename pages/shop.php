@@ -5,7 +5,7 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Shop - De Snoepwinkel</title>
     <meta name="description" content=""/>
     <?php include_once __DIR__ . '../../php/head.inc.php' ?>
   </head>
@@ -39,9 +39,10 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
               <h5 class="card-title">' . $product['product_name'] . '</h5>
               <h6 class="card-subtitle mb-2">&#8364;' . $product['product_price'] . ' per stuk</h6>
               <p class="card-text">' . substr($product['product_desc'], 0, 180) . '...</p>
-              <a href="#" class="btn btn-primary">Bekijk</a>
+              <a href="product?id=' . $product['product_id'] . '" class="btn btn-primary">Bekijk</a>
               <a href="#" class="btn btn-primary bg-danger">Winkelmand</a>
             </div>
+            <input type="hidden" data="' . $product['product_id'] . '"></input>
           </div>
           ';
 

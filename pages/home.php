@@ -5,7 +5,7 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>De Snoepwinkel</title>
     <meta name="description" content=""/>
     <?php include_once __DIR__ . '../../php/head.inc.php' ?>
   </head>

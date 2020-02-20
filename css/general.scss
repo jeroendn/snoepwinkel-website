@@ -7,6 +7,24 @@ html, body {
   width: 100vw;
 }
 
+#background-images {
+  position: absolute;
+  z-index: 0;
+
+  .item {
+    background-color: rgba(231, 113, 125, 0.1);
+    border-radius: 50%;
+    position: absolute;
+
+    &.item-1 {
+      width: 600px;
+      height: 600px;
+      top: -200px;
+      left: -100px;
+    }
+  }
+}
+
 @media screen and (max-width: $break-mobile) {
 
 }

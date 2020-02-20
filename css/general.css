@@ -4,3 +4,21 @@ html, body {
   overflow-x: hidden;
   width: 100vw;
 }
+
+#background-images {
+  position: absolute;
+  z-index: 0;
+}
+
+#background-images .item {
+  background-color: rgba(231, 113, 125, 0.1);
+  border-radius: 50%;
+  position: absolute;
+}
+
+#background-images .item.item-1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  left: -100px;
+}

@@ -1,3 +1,8 @@
+<!-- <div id="background-images">
+  <span class="item item-1"></span>
+  <span class="item item-2"></span>
+</div> -->
+
 <header id="header">
   <div class="header-logo">
     <a href="home">De Snoepwinkel</a>

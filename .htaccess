@@ -15,5 +15,6 @@ RewriteRule ^(.*)$ $1.php
 RewriteRule ^$ pages/home.php
 RewriteRule ^home$ pages/home.php
 RewriteRule ^shop$ pages/shop.php
+RewriteRule ^product$ pages/product.php
 
 DirectoryIndex index.php
