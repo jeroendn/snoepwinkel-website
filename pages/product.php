@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include_once __DIR__ . '../../php/dbconnection.inc.php';
 ?>
 
@@ -48,7 +50,8 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
                     <input type="number" id="quantity" name="quantity" min="1" max="99" value="1">
                   </div>
                   <div class="row mb-3 product-cart-button">
-                    <a href="#" class="btn btn-primary bg-danger">Winkelmand</a>
+                    <a class="btn btn-primary bg-danger">Winkelmand</a>
+                    <input type="hidden" data="<?php echo $product['product_id'] ?>"></input>
                   </div>
                 </div>
               </div>
@@ -73,6 +76,9 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
     <?php include_once __DIR__ . '../../php/footer.inc.php' ?>
 
     <!-- scripts -->
-    <?php include_once __DIR__ . '../../php/js.inc.php' ?>
+    <?php include_once __DIR__ . '../../php/js.inc.php';
+
+    var_dump($_SESSION);
+    ?>
   </body>
 </html>

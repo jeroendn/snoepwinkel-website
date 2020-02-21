@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include_once __DIR__ . '../../php/dbconnection.inc.php';
 ?>
 
