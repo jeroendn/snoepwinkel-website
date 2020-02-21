@@ -37,3 +37,7 @@
 #product-page .product-desc {
   border-top: 1px solid #afd275;
 }
+
+#product-page .product-desc h3 {
+  flex: 0 0 100%;
+}

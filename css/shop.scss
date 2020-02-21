@@ -33,7 +33,7 @@
           a.btn {
             width: 49%;
 
-            &.product-cart-button:after {
+            &.product-cart-button:not(.added):after {
               content: "\f067";
               font-family: "Font Awesome 5 Free";
               font-weight: 700;

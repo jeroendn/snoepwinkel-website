@@ -47,5 +47,9 @@
 
   .product-desc {
     border-top: 1px solid $green;
+
+    h3 {
+      flex: 0 0 100%;
+    }
   }
 }

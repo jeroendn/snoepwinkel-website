@@ -11,7 +11,7 @@ $(document).ready(function() {
       }
   });
 
-  $('#product-page .product-cart-button').on('click', function() {
+  $('#product-page .product-cart-button:not(.added)').on('click', function() {
     let product_id = $(this).parent().find('input[type="hidden"]').attr('data');
     let product_qty = $(this).parent().find('input[type="number"]').val();
     let product_page = 'product?id=' + product_id;
@@ -19,10 +19,10 @@ $(document).ready(function() {
     window.location.href = 'php/cart.inc.php?id=' + product_id + '&qty=' + product_qty + '&page=' + product_page;
   });
 
-  $('#shop-page .product-cart-button').on('click', function() {
+  $('#shop-page .product-cart-button:not(.added)').on('click', function() {
     let product_id = $(this).parent().find('input[type="hidden"]').attr('data');
     let product_qty = 1;
-    let product_page = 'shop';
+    let product_page = 'shop#product-' + product_id;
 
     window.location.href = 'php/cart.inc.php?id=' + product_id + '&qty=' + product_qty + '&page=' + product_page;
   });

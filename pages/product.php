@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include_once __DIR__ . '../../php/dbconnection.inc.php';
 ?>
 
@@ -76,9 +75,6 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
     <?php include_once __DIR__ . '../../php/footer.inc.php' ?>
 
     <!-- scripts -->
-    <?php include_once __DIR__ . '../../php/js.inc.php';
-
-    var_dump($_SESSION);
-    ?>
+    <?php include_once __DIR__ . '../../php/js.inc.php' ?>
   </body>
 </html>
