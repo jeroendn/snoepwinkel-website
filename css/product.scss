@@ -1,0 +1,51 @@
+@import 'var.scss';
+
+#product-page {
+  .product-img {
+    img {
+      width: 100%;
+      height: 100%;
+      padding: 0 50px;
+    }
+  }
+
+  .product-details {
+    .product-price {
+      font-size: 25px;
+      font-weight: bold;
+
+      span {
+        font-size: 15px;
+        margin-left: 10px;
+      }
+    }
+
+    .add-to-cart-wrapper {
+      .row {
+        margin-left: 0;
+
+        &.product-quantity {
+          margin-right: 15px;
+
+          input[type="number"] {
+            padding-left: 10px;
+            width: 60px;
+          }
+        }
+
+        &.product-cart-button a {
+          &:after {
+            content: "\f067";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 700;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .product-desc {
+    border-top: 1px solid $green;
+  }
+}

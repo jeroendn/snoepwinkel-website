@@ -1,38 +1,45 @@
 @import 'var.scss';
 
-.shop-grid {
-  // display: flex;
+#shop-page {
+  .shop-grid {
+    .row {
+      display: flex;
+      margin-bottom: 30px;
 
-  .row {
-    display: flex;
-    margin-bottom: 30px;
+      .card {
+        min-width: 30%;
+        background-color: $blue;
 
-    .card {
-      min-width: 30%;
-      background-color: $blue;
-
-      &:not(:last-child) {
-        margin-right: 5%;
-      }
-
-      img {
-        height: 300px;
-        object-fit: cover;
-        background-color: #fff;
-      }
-
-      .card-body {
-        .card-subtitle {
-          color: $pink;
-          font-weight: bold;
+        &:not(:last-child) {
+          margin-right: 5%;
         }
 
-        .card-text {
-          min-height: 120px;
+        img {
+          height: 300px;
+          object-fit: cover;
+          background-color: #fff;
         }
 
-        a.btn {
-          width: 49%;
+        .card-body {
+          .card-subtitle {
+            color: $pink;
+            font-weight: bold;
+          }
+
+          .card-text {
+            min-height: 120px;
+          }
+
+          a.btn {
+            width: 49%;
+
+            &.product-cart-button:after {
+              content: "\f067";
+              font-family: "Font Awesome 5 Free";
+              font-weight: 700;
+              margin-left: 10px;
+            }
+          }
         }
       }
     }

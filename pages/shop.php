@@ -14,7 +14,7 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
     <!-- header -->
     <?php include_once __DIR__ . '../../php/header.inc.php' ?>
 
-    <main id="" class="page-content">
+    <main id="shop-page" class="page-content">
       <section class="shop-grid container mt-5">
         <?php
         $sql = "SELECT * FROM product ORDER BY product_date DESC LIMIT 50";
@@ -40,7 +40,7 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
               <h6 class="card-subtitle mb-2">&#8364;' . $product['product_price'] . ' per stuk</h6>
               <p class="card-text">' . substr($product['product_desc'], 0, 180) . '...</p>
               <a href="product?id=' . $product['product_id'] . '" class="btn btn-primary">Bekijk</a>
-              <a href="#" class="btn btn-primary bg-danger">Winkelmand</a>
+              <a href="#" class="btn btn-primary bg-danger product-cart-button">Winkelmand</a>
             </div>
             <input type="hidden" data="' . $product['product_id'] . '"></input>
           </div>

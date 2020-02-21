@@ -14,7 +14,7 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
     <!-- header -->
     <?php include_once __DIR__ . '../../php/header.inc.php' ?>
 
-    <main id="" class="page-content">
+    <main id="product-page" class="page-content">
       <section class="container mt-5">
 
         <?php
@@ -32,31 +32,32 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
 
           foreach ($the_product as $product) {
             ?>
-            <section class="container mt-5">
-              <div class="row">
-                <div class="col-sm-6 mb-3 product-img ">
-                  <img src="<?php echo $product['product_img'] ?>" class="img-fluid">
+            <div class="row">
+              <div class="col-sm-6 mb-3 product-img">
+                <img src="<?php echo $product['product_img'] ?>" class="img-fluid">
+              </div>
+              <div class="col-sm-6 product-details">
+                <div class="row product-title ">
+                  <h1><?php echo $product['product_name'] ?></h1>
                 </div>
-                <div class="col-sm-6 product-details">
-                  <div class="row mb-3 product-title ">
-                    <p><?php echo $product['product_name'] ?></p>
-                  </div>
-                  <div class="row mb-3 product-price">
-                    <p><?php echo $product['product_price'] ?></p>
-                  </div>
+                <div class="row product-price">
+                  <p>&#8364;<?php echo $product['product_price'] ?><span>per stuk<span></p>
+                </div>
+                <div class="row add-to-cart-wrapper">
                   <div class="row mb-3 product-quantity">
-                    
+                    <input type="number" id="quantity" name="quantity" min="1" max="99" value="1">
                   </div>
                   <div class="row mb-3 product-cart-button">
-
+                    <a href="#" class="btn btn-primary bg-danger">Winkelmand</a>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="row product-desc">
-                <p><?php echo $product['product_desc'] ?></p>
-              </div>
-            </section>
+            <div class="row pt-5 product-desc">
+              <h3>Beschrijving</h3>
+              <p><?php echo $product['product_desc'] ?></p>
+            </div>
             <?php
           }
         }

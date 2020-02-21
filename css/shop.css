@@ -1,32 +1,39 @@
-.shop-grid .row {
+#shop-page .shop-grid .row {
   display: flex;
   margin-bottom: 30px;
 }
 
-.shop-grid .row .card {
+#shop-page .shop-grid .row .card {
   min-width: 30%;
   background-color: #c2cad0;
 }
 
-.shop-grid .row .card:not(:last-child) {
+#shop-page .shop-grid .row .card:not(:last-child) {
   margin-right: 5%;
 }
 
-.shop-grid .row .card img {
+#shop-page .shop-grid .row .card img {
   height: 300px;
   object-fit: cover;
   background-color: #fff;
 }
 
-.shop-grid .row .card .card-body .card-subtitle {
+#shop-page .shop-grid .row .card .card-body .card-subtitle {
   color: #e7717d;
   font-weight: bold;
 }
 
-.shop-grid .row .card .card-body .card-text {
+#shop-page .shop-grid .row .card .card-body .card-text {
   min-height: 120px;
 }
 
-.shop-grid .row .card .card-body a.btn {
+#shop-page .shop-grid .row .card .card-body a.btn {
   width: 49%;
+}
+
+#shop-page .shop-grid .row .card .card-body a.btn.product-cart-button:after {
+  content: "\f067";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  margin-left: 10px;
 }

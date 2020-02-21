@@ -5,6 +5,7 @@ html, body {
   margin: 0;
   overflow-x: hidden;
   width: 100vw;
+  scroll-behavior: smooth;
 }
 
 #background-images {
@@ -22,6 +23,14 @@ html, body {
       top: -200px;
       left: -100px;
     }
+  }
+}
+
+#home-page {
+  a.btn.btn-lg.btn-block {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Varela Round';
   }
 }
 
