@@ -19,6 +19,7 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
       <section class="container mt-5">
 
         <?php
+        // get product id from url
         $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $url_components = parse_url($url);
         parse_str($url_components['query'], $params);

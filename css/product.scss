@@ -1,6 +1,13 @@
 @import 'var.scss';
 
 #product-page {
+  section {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0px 30px -30px #000;
+    padding: 50px;
+  }
+
   .product-img {
     img {
       width: 100%;
@@ -34,6 +41,9 @@
         }
 
         &.product-cart-button a {
+          cursor: pointer;
+          color: #fff;
+
           &:after {
             content: "\f067";
             font-family: "Font Awesome 5 Free";

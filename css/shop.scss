@@ -9,6 +9,7 @@
       .card {
         min-width: 30%;
         background-color: $blue;
+        transition: box-shadow 200ms ease;
 
         &:not(:last-child) {
           margin-right: 5%;
@@ -18,6 +19,9 @@
           height: 300px;
           object-fit: cover;
           background-color: #fff;
+          cursor: pointer;
+          padding: 1.25rem;
+          transition: opacity 200ms;
         }
 
         .card-body {
@@ -32,6 +36,7 @@
 
           a.btn {
             width: 49%;
+            cursor: pointer;
 
             &.product-cart-button:not(.added):after {
               content: "\f067";
@@ -39,6 +44,14 @@
               font-weight: 700;
               margin-left: 10px;
             }
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 5px 20px -10px #333;
+
+          img {
+            opacity: 0.7;
           }
         }
       }

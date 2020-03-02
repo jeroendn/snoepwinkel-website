@@ -6,11 +6,25 @@
   background-color: $pink;
   border-top: 10px solid $brown;
   display: flex;
+  flex-flow: row wrap;
   align-items: flex-end;
+
+  #footer-wrap {
+    width: 100%;
+    padding: 0 10%;
+  }
 
   #bottom-bar {
     height: 50px;
     width: 100%;
     background: $green;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+
+    p {
+      font-size: 10px;
+      margin-bottom: 0;
+    }
   }
 }

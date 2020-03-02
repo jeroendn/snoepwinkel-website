@@ -1,0 +1,33 @@
+#cart #cart-items .cart-item {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+#cart #cart-items .cart-item img {
+  height: 100%;
+  width: 100px;
+  object-fit: cover;
+}
+
+#cart #cart-items .cart-item .quantity input::-webkit-outer-spin-button, #cart #cart-items .cart-item .quantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+#cart #cart-items .cart-item .quantity span.qty-plus:before, #cart #cart-items .cart-item .quantity span.qty-min:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+}
+
+#cart #cart-items .cart-item .quantity span.qty-plus:before {
+  content: '\f055';
+}
+
+#cart #cart-items .cart-item .quantity span.qty-min:before {
+  content: '\f056';
+}
+
+#cart #cart-items .cart-item .delete:before {
+  content: '\f2ed';
+  font-family: "Font Awesome 5 Free";
+}

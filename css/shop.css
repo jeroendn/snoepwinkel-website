@@ -6,6 +6,7 @@
 #shop-page .shop-grid .row .card {
   min-width: 30%;
   background-color: #c2cad0;
+  transition: box-shadow 200ms ease;
 }
 
 #shop-page .shop-grid .row .card:not(:last-child) {
@@ -16,6 +17,9 @@
   height: 300px;
   object-fit: cover;
   background-color: #fff;
+  cursor: pointer;
+  padding: 1.25rem;
+  transition: opacity 200ms;
 }
 
 #shop-page .shop-grid .row .card .card-body .card-subtitle {
@@ -29,6 +33,7 @@
 
 #shop-page .shop-grid .row .card .card-body a.btn {
   width: 49%;
+  cursor: pointer;
 }
 
 #shop-page .shop-grid .row .card .card-body a.btn.product-cart-button:not(.added):after {
@@ -36,4 +41,12 @@
   font-family: "Font Awesome 5 Free";
   font-weight: 700;
   margin-left: 10px;
+}
+
+#shop-page .shop-grid .row .card:hover {
+  box-shadow: 0 5px 20px -10px #333;
+}
+
+#shop-page .shop-grid .row .card:hover img {
+  opacity: 0.7;
 }

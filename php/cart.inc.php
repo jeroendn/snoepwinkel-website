@@ -20,7 +20,7 @@ if (!empty($_SESSION['cart'][0])) {
   foreach ($_SESSION['cart'] as $row) {
     $row_count++;
   }
-  $_SESSION['cart'][$row_count+1] = $cart;
+  $_SESSION['cart'][$row_count] = $cart;
 }
 else {
   $_SESSION['cart'][0] = $cart;

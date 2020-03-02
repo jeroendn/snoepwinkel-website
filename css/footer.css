@@ -4,11 +4,25 @@
   background-color: #e7717d;
   border-top: 10px solid #7e685a;
   display: flex;
+  flex-flow: row wrap;
   align-items: flex-end;
+}
+
+#footer #footer-wrap {
+  width: 100%;
+  padding: 0 10%;
 }
 
 #footer #bottom-bar {
   height: 50px;
   width: 100%;
   background: #afd275;
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+}
+
+#footer #bottom-bar p {
+  font-size: 10px;
+  margin-bottom: 0;
 }
