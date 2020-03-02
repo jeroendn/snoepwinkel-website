@@ -17,5 +17,6 @@ RewriteRule ^home$ pages/home.php
 RewriteRule ^shop$ pages/shop.php
 RewriteRule ^product$ pages/product.php
 RewriteRule ^cart$ pages/cart.php
+RewriteRule ^admin$ admin/pages/login.php
 
 DirectoryIndex index.php

@@ -41,7 +41,7 @@ $(document).ready(function() {
     $(this).find('.price').html(price.toFixed(2));
   });
 
-  $('.qty-min').on('click', function() {
+  $('#cart .cart-item .qty-min').on('click', function() {
     if ($(this).parent().find('input[type="number"]').val() > 1) {
       let num = $(this).parent().find('input[type="number"]').val() - 1;
       $(this).parent().find('input[type="number"]').val(num);
@@ -52,19 +52,25 @@ $(document).ready(function() {
     }
   });
 
-  $('.qty-plus').on('click', function() {
+  $('#cart .cart-item .qty-plus').on('click', function() {
     let num = +$(this).parent().find('input').val() + 1;
     $(this).parent().find('input').val(num);
-
-    // $(this).parent().find('input').attr('val', $(this).parent().find('input').val());
 
     let qty = $(this).parent().find('input').val() - 1;
     let price = $(this).parent().parent().find('.price').html() / qty;
     $(this).parent().parent().find('.price').html(price_calc_add(price, qty));
   });
 
-  $('#cart .cart-item .quantity input').on('change', function() {
+  $('#cart .cart-item .delete').on('click', function() {
 
+    $.ajax({
+      type: "POST",
+      url: 'php/delete_cart.php',
+      dataType: "html",
+      success: function() {
+        console.log('deleted');
+      }
+    });
   });
 
 });

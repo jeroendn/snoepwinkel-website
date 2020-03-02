@@ -43,28 +43,9 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
               <a href="product?id=' . $product['product_id'] . '" class="btn btn-primary">Bekijk</a>
           ';
 
-          if (!empty($_SESSION['cart'][0])) {
-            $id_array = array();
-            foreach($_SESSION['cart'] as $item)
-                {
-                $id_array[] = $item['p_id'];
-                }
-
-            if (in_array($product['product_id'], $id_array))
-            {
-              echo '<a href="cart" class="btn btn-primary bg-success product-cart-button added">View cart</a>';
-            }
-            else {
-              echo '<a class="btn btn-primary text-light bg-danger product-cart-button">Winkelmand</a>';
-            }
-          }
-          else {
-            echo '<a class="btn btn-primary text-light bg-danger product-cart-button">Winkelmand</a>';
-          }
-
+          include __DIR__ . '../../php/template_parts/shop_btn.php';
 
           echo '
-              <input type="hidden" data="' . $product['product_id'] . '"></input>
             </div>
           </div>
           ';
