@@ -34,6 +34,12 @@ header#header .header-logo a {
   user-select: none;
 }
 
+@media screen and (max-width: 1050px) {
+  header#header .header-logo a {
+    font-size: 20px;
+  }
+}
+
 header#header #nav-wrapper {
   display: flex;
   justify-content: space-between;

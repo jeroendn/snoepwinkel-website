@@ -32,6 +32,10 @@ header#header {
       font-family: 'Varela Round';
       transform: skew(-4deg, -4deg);
       user-select: none;
+
+      @media screen and (max-width: $break-tablet) {
+        font-size: 20px;
+      }
     }
   }
 
