@@ -11,7 +11,7 @@
     <?php include_once __DIR__ . '../../php/header.inc.php' ?>
 
     <main id="" class="page-content">
-      <p style="width: 100%; text-align: center; margin-top: 50px; font-size: 25px;">A problem has occured</p>
+      <p style="width: 100%; text-align: center; margin-top: 50px; font-size: 25px;">Er is een fout opgetreden bij het opvragen van de pagina!</p>
     </main>
 
     <!-- footer -->

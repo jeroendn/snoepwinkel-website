@@ -6,6 +6,11 @@
       height: 100px;
       display: flex;
       align-items: center;
+      position: relative;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #aaa;
+      }
 
       img {
         height: 100%;
@@ -14,12 +19,14 @@
       }
 
       .title {
-
+        flex: 0 0 30%;
+        max-width: 30%;
+        margin: 0 0 0 15px;
       }
 
       .quantity {
         user-select: none;
-        
+
         input {
           &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
           -webkit-appearance: none;
@@ -43,17 +50,31 @@
       }
 
       .price {
-
+        margin: 0 10px;
       }
 
-      .delete:before {
-        content: '\f2ed';
-        font-family: "Font Awesome 5 Free";
+      .delete {
+        position: absolute;
+        right: 0;
+
+        &:before {
+          content: '\f2ed';
+          font-family: "Font Awesome 5 Free";
+        }
       }
     }
   }
 
   #cart-summary {
+    .total-price {
+      text-align: right;
+      font-weight: bold;
+    }
 
+    .cart-payment-button {
+      width: 100%;
+      padding: 15px 0;
+      font-weight: bold;
+    }
   }
 }

@@ -35,44 +35,4 @@ $(document).ready(function() {
     window.location.href = $(this).next().find('a').attr('href');
   });
 
-  // cart calculations
-  $('#cart .cart-item').each(function() {
-    let price = $(this).find('.quantity input[type="number"]').val() * $(this).find('.price').html();
-    $(this).find('.price').html(price.toFixed(2));
-  });
-
-  $('#cart .cart-item .qty-min').on('click', function() {
-    if ($(this).parent().find('input[type="number"]').val() > 1) {
-      let num = $(this).parent().find('input[type="number"]').val() - 1;
-      $(this).parent().find('input[type="number"]').val(num);
-
-      let qty = +$(this).parent().find('input').val() + 1;
-      let price = $(this).parent().parent().find('.price').html() / qty;
-      $(this).parent().parent().find('.price').html(price_calc_min(price, qty));
-    }
-  });
-
-  $('#cart .cart-item .qty-plus').on('click', function() {
-    let num = +$(this).parent().find('input[type="number"]').val() + 1;
-    $(this).parent().find('input[type="number"]').val(num);
-
-    let qty = $(this).parent().find('input[type="number"]').val() - 1;
-    let price = $(this).parent().parent().find('.price').html() / qty;
-    $(this).parent().parent().find('.price').html(price_calc_add(price, qty));
-  });
-
-  $('#cart .cart-item .delete').on('click', function() {
-    let product_id = $(this).parent().find('input[type="hidden"]').attr('data');
-
-    $.ajax({
-      type: "POST",
-      url: 'php/delete_cart.php' + '?id=' + product_id,
-      data: $(this).serialize(),
-      success: (json) => {
-        console.log('deleted');
-        $(this).parent().fadeOut('slow');
-      }
-    });
-  });
-
 });

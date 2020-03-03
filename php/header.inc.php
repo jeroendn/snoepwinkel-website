@@ -14,7 +14,24 @@
       <li class="menu-item"><a href="shop">Shop</a></li>
     </ul>
     <ul id="menu-right" class="menu">
-      <li class="menu-item"><a href="cart" class="icon"></a></li>
+      <li class="menu-item"><a href="cart" class="icon">
+        <span class="cart-count">
+          <?php
+          if (!empty($_SESSION['cart'][0])) {
+            $cart_count = 0;
+
+            foreach($_SESSION['cart'] as $cart_item) {
+              $cart_count += $cart_item['p_qty'];
+            }
+
+            echo $cart_count;
+          }
+          else {
+            echo '0';
+          }
+          ?>
+        </span>
+      </a></li>
     </ul>
   </nav>
 </header>

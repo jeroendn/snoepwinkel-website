@@ -16,7 +16,7 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
     <?php include_once __DIR__ . '../../php/header.inc.php' ?>
 
     <main id="product-page" class="page-content">
-      <section class="container mt-5">
+      <section class="container mt-5 content-box">
 
         <?php
         // get product id from url

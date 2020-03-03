@@ -7,12 +7,9 @@ parse_str($url_components['query'], $params);
 
 $product_id = $params['id'];
 
-
-$id_array = array();
 $loop_index = 0;
 
 foreach($_SESSION['cart'] as $cart_item)  {
-  $id_array[] = $cart_item['p_id'];
 
   if ($cart_item['p_id'] == $product_id) {
     // clear data

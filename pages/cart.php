@@ -16,10 +16,10 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
     <?php include_once __DIR__ . '../../php/header.inc.php' ?>
 
     <main id="cart" class="page-content">
-      <section class="container">
+      <section class="container mt-5">
         <div class="row">
 
-          <div id="cart-items" class="col-sm-6">
+          <div id="cart-items" class="col-sm-6 content-box">
           <?php
           $product_count = 0;
 
@@ -51,8 +51,9 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
           ?>
         </div>
 
-        <div id="cart-summary" class="col-sm-6">
-
+        <div id="cart-summary" class="col-sm-6 content-box">
+          <p class="total-price">0</p>
+          <a class="btn btn-primary text-light bg-danger cart-payment-button">Naar betalen</a>
         </div>
 
       </div>
