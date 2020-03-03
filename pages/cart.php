@@ -33,15 +33,16 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
             foreach ($the_product as $product) {
               echo '
               <div class="cart-item">
-              <img src="' .  $product['product_img'] . '"></img>
-              <p class="title">' . $product['product_name'] . '<p>
-              <div class="quantity">
-                <span class="qty-min"></span>
-                <input type="number" id="quantity" name="quantity" min="1" max="99" value="' . $cart_item['p_qty'] . '" readonly>
-                <span class="qty-plus"></span>
-              </div>
-              <p class="price">' . $product['product_price'] . '</p>
-              <span class="delete"><span>
+                <img src="' .  $product['product_img'] . '"></img>
+                <p class="title">' . $product['product_name'] . '<p>
+                <div class="quantity">
+                  <span class="qty-min"></span>
+                  <input type="number" id="quantity" name="quantity" min="1" max="99" value="' . $cart_item['p_qty'] . '" readonly>
+                  <span class="qty-plus"></span>
+                </div>
+                <p class="price">' . $product['product_price'] . '</p>
+                <span class="delete"></span>
+                <input type="hidden" data="' . $product['product_id'] . '"></input>
               </div>';
             }
 
