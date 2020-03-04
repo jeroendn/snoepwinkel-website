@@ -1,10 +1,12 @@
 <?php
 session_start();
 
-// check if user comes from the cart page
-if (true) {
-
-}
+// $headers = array(
+//     'From' => 'snoepwinkel@jeroendenijs.ga',
+//     'Reply-To' => 'jeroendenijs@outlook.com',
+//     'X-Mailer' => 'PHP/' . phpversion()
+// );
+// mail("jeroendenijs@outlook.com","My subject","hoi", $headers, "snoepwinkel@jeroendenijs.ga");
 
 include_once __DIR__ . '../../php/dbconnection.inc.php';
 ?>
@@ -22,7 +24,37 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
     <?php include_once __DIR__ . '../../php/header.inc.php' ?>
 
     <main id="checkout" class="page-content">
+      <section class="container mt-5 content-box">
+        <form class="checkout-form" action="index.html" method="post">
+          <p>Bestel gegevens:</p>
+          <input type="text" name="name" placeholder="Naam"></input>
+          <input type="text" name="mail" placeholder="E-mail"></input>
+          <p>Ontvangst adres:</p>
+          <input type="text" name="city" placeholder="Plaats"></input>
+          <input type="text" name="zip" placeholder="Postcode"></input>
+          <input type="text" name="street" placeholder="Straat"></input>
+          <input type="text" name="street_number" placeholder="Huisnummer"></input>
 
+          <?php
+          // calc total price with prices from db
+          $price_totals = 0;
+
+          foreach ($_SESSION['cart'] as $cart_item) {
+            $sql = "SELECT * FROM product WHERE product_id = " . $cart_item['p_id'];
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $the_product = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($the_product as $product) {
+              $price_totals = $price_totals + $product['product_price'] * $cart_item['p_qty'];
+            }
+          }
+          echo '<p class="totals">Total: &#x20ac ' . round($price_totals, 2) . '</p>';
+          ?>
+
+          <a class="btn btn-primary text-light bg-danger checkout-payment-button red-btn">Bestelling plaatsen</a>
+        </form>
+      </section>
     </main>
 
     <!-- footer -->

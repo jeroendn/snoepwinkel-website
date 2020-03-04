@@ -46,7 +46,7 @@ $(document).ready(function() {
       url: 'php/update_qty_cart.php' + '?id=' + product_id + '&qty=plus',
     });
   });
-  
+
   $('#cart .cart-item .delete').on('click', function() {
     let product_id = $(this).parent().find('input[type="hidden"]').attr('data');
 

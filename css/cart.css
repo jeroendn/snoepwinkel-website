@@ -46,6 +46,10 @@
   margin: 0 10px;
 }
 
+#cart #cart-items .cart-item .price:before {
+  content: '\20ac';
+}
+
 #cart #cart-items .cart-item .delete {
   position: absolute;
   right: 0;
@@ -58,11 +62,5 @@
 
 #cart #cart-summary .total-price {
   text-align: right;
-  font-weight: bold;
-}
-
-#cart #cart-summary .cart-payment-button {
-  width: 100%;
-  padding: 15px 0;
   font-weight: bold;
 }

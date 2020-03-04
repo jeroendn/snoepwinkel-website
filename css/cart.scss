@@ -51,6 +51,10 @@
 
       .price {
         margin: 0 10px;
+
+        &:before {
+          content: '\20ac';
+        }
       }
 
       .delete {
@@ -68,12 +72,6 @@
   #cart-summary {
     .total-price {
       text-align: right;
-      font-weight: bold;
-    }
-
-    .cart-payment-button {
-      width: 100%;
-      padding: 15px 0;
       font-weight: bold;
     }
   }
