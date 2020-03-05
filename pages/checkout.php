@@ -49,7 +49,8 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
               $price_totals = $price_totals + $product['product_price'] * $cart_item['p_qty'];
             }
           }
-          echo '<p class="totals">Total: &#x20ac ' . round($price_totals, 2) . '</p>';
+          echo '<p class="totals">Totaal: &#x20ac ' . round($price_totals, 2) . '</p>';
+          $_SESSION['totals'] = $price_totals;
           ?>
 
           <a class="btn btn-primary text-light bg-danger checkout-payment-button red-btn">Bestelling plaatsen</a>
