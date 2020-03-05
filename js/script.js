@@ -35,4 +35,20 @@ $(document).ready(function() {
     window.location.href = $(this).next().find('a').attr('href');
   });
 
+  // order status call
+  $('#order-status .order-status-btn').on('click', function() {
+    let mail = $(this).parent().find('input[name="mail"]').val();
+    let order_id = $(this).parent().find('input[name="order_id"]').val();
+
+    mail = 'jeroendenijs.k.smile@outlook.com';
+    order_id = 78;
+
+    // if (mail == '' || order_id == '') {
+    //   return;
+    // }
+    // else {
+      window.location.href = 'php/order_status_submit?mail=' + mail + '&order_id=' + order_id;
+    // }
+  });
+
 });

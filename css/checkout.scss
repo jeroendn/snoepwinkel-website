@@ -1,5 +1,58 @@
 @import 'var.scss';
 
 #checkout {
+  .order-status {
+    align-items: center;
+    background: transparant;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 500ms ease;
+    transition: background-color 500ms ease;
+    width: 100%;
 
+    &.success, &.error, &.empty {
+      max-height: 100px;
+    }
+
+    &.success {
+      background: $green;
+
+      p.success {
+        display: block;
+      }
+    }
+
+    &.error {
+      background: #f00;
+
+      p.error {
+        display: block;
+      }
+    }
+
+    &.empty {
+      background: #ff9000;
+
+      p.empty {
+        display: block;
+      }
+    }
+
+    p {
+      color: #fff;
+      display: none;
+      font-weight: bold;
+      margin-bottom: 0;
+      padding: 15px;
+    }
+  }
+
+  form.checkout-form {
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
 }

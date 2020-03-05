@@ -18,6 +18,7 @@ RewriteRule ^shop$ pages/shop.php
 RewriteRule ^product$ pages/product.php
 RewriteRule ^cart$ pages/cart.php
 RewriteRule ^checkout$ pages/checkout.php
+RewriteRule ^order_status$ pages/order_status.php
 RewriteRule ^admin$ admin/pages/login.php
 
 DirectoryIndex index.php

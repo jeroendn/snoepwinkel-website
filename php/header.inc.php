@@ -12,6 +12,7 @@
     <ul id="main-menu" class="menu">
       <li class="menu-item"><a href="home">Home</a></li>
       <li class="menu-item"><a href="shop">Shop</a></li>
+      <li class="menu-item"><a href="order_status">Order status</a></li>
     </ul>
     <ul id="menu-right" class="menu">
       <li class="menu-item"><a href="cart" class="icon">
