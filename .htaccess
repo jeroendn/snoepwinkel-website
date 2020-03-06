@@ -20,5 +20,7 @@ RewriteRule ^cart$ pages/cart.php
 RewriteRule ^checkout$ pages/checkout.php
 RewriteRule ^order_status$ pages/order_status.php
 RewriteRule ^admin$ admin/pages/login.php
+RewriteRule ^admin/login$ admin/pages/login.php
+RewriteRule ^admin/dashboard$ admin/pages/dashboard.php
 
 DirectoryIndex index.php

@@ -2,6 +2,11 @@
 session_start();
 include_once __DIR__ . '../../php/dbconnection.inc.php';
 
+if (empty($_SESSION['cart'])) {
+  echo 'Winkelwagen is nog leeg!';
+  return;
+}
+
 $name = $_POST['name'];
 $mail = $_POST['mail'];
 $city = $_POST['city'];
