@@ -22,8 +22,8 @@ $(document).ready(function() {
         type: "POST",
         url: 'php/place_order.php',
         data: 'name=' + name + '&mail=' + mail + '&city=' + city + '&zip=' + zip + '&street=' + street + '&street_number=' + street_number,
-        success: (json) => {
-          $('#checkout .order-status').html('<!-- <p class="success">Bestelling is succesvol geplaatst!</p>');
+        success: function(data) {
+            $('#checkout .order-status').html('<p class="success">Bestelling is succesvol geplaatst!<br>Uw bestelnummer is: ' + data + '<br>Onthoudt deze goed!</p>');
         },
         error: (json) => {
           $('#checkout .order-status').html('<p class="error">Er is een fout opgetreden!</p>');

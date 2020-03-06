@@ -40,8 +40,8 @@ $(document).ready(function() {
     let mail = $(this).parent().find('input[name="mail"]').val();
     let order_id = $(this).parent().find('input[name="order_id"]').val();
 
-    mail = 'jeroendenijs.k.smile@outlook.com';
-    order_id = 78;
+    // mail = 'jeroendenijs.k.smile@outlook.com';
+    // order_id = 78;
 
     if (mail == '' || order_id == '') {
       return;

@@ -39,7 +39,7 @@ else {
 }
 
 // create a order
-$order_status = 3;
+$order_status = 5;
 
 $sql = "INSERT INTO orders (account_id, order_status_id, order_total_price) VALUES (:account_id, :order_status, :total_price)";
 $stmt = $conn->prepare($sql);
@@ -73,3 +73,5 @@ foreach ($_SESSION['cart'] as $cart_item) {
     $stmt->execute();
   }
 }
+
+echo $order_id;

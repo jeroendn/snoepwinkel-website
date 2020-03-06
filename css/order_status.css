@@ -1,3 +1,38 @@
 #order-status form.status-form input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
+#order-status .order-item {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#order-status .order-item:not(:last-child) {
+  border-bottom: 1px solid #aaa;
+}
+
+#order-status .order-item img {
+  height: 100%;
+  width: 100px;
+  object-fit: cover;
+}
+
+#order-status .order-item .title {
+  flex: 0 0 30%;
+  max-width: 30%;
+  padding: 0 0 0 15px;
+}
+
+#order-status .order-item .quantity {
+  margin-bottom: 0;
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+
+#order-status .order-item .price {
+  flex: 0 0 40%;
+  max-width: calc(40% - 100px);
+  text-align: right;
+}

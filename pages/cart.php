@@ -35,7 +35,7 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
                 echo '
                 <div class="cart-item">
                   <img src="' .  $product['product_img'] . '"></img>
-                  <p class="title">' . $product['product_name'] . '<p>
+                  <p class="title">' . $product['product_name'] . '</p>
                   <div class="quantity">
                     <span class="qty-min"></span>
                     <input type="number" id="quantity" name="quantity" min="1" max="99" value="' . $cart_item['p_qty'] . '" readonly>

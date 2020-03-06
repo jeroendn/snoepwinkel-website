@@ -1,13 +1,6 @@
 <?php
 session_start();
 
-// $headers = array(
-//     'From' => 'snoepwinkel@jeroendenijs.ga',
-//     'Reply-To' => 'jeroendenijs@outlook.com',
-//     'X-Mailer' => 'PHP/' . phpversion()
-// );
-// mail("jeroendenijs@outlook.com","My subject","hoi", $headers, "snoepwinkel@jeroendenijs.ga");
-
 include_once __DIR__ . '../../php/dbconnection.inc.php';
 ?>
 
