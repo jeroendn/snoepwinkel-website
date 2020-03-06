@@ -43,12 +43,12 @@ $(document).ready(function() {
     mail = 'jeroendenijs.k.smile@outlook.com';
     order_id = 78;
 
-    // if (mail == '' || order_id == '') {
-    //   return;
-    // }
-    // else {
+    if (mail == '' || order_id == '') {
+      return;
+    }
+    else {
       window.location.href = 'php/order_status_submit?mail=' + mail + '&order_id=' + order_id;
-    // }
+    }
   });
 
 });

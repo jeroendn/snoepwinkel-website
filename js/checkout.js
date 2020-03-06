@@ -10,15 +10,11 @@ $(document).ready(function() {
 
     // check if fields are filled in
     if (name == '' || mail == '' || city == '' || zip == '' || street == '' || street_number == '') {
-      $('#checkout .order-status').addClass('empty');
-      $('#checkout .order-status').removeClass('success');
-      $('#checkout .order-status').removeClass('error');
+      $('#checkout .order-status').html('<p class="empty">Er zijn nog lege velden!</p>');
       return;
     }
     else if (zip.length != 6) {
-      $('#checkout .order-status').addClass('error');
-      $('#checkout .order-status').removeClass('success');
-      $('#checkout .order-status').removeClass('empty');
+      $('#checkout .order-status').html('<p class="error">Er is een fout opgetreden!</p>');
       return;
     }
     else {
@@ -27,14 +23,10 @@ $(document).ready(function() {
         url: 'php/place_order.php',
         data: 'name=' + name + '&mail=' + mail + '&city=' + city + '&zip=' + zip + '&street=' + street + '&street_number=' + street_number,
         success: (json) => {
-          $('#checkout .order-status').addClass('success');
-          $('#checkout .order-status').removeClass('empty');
-          $('#checkout .order-status').removeClass('error');
+          $('#checkout .order-status').html('<!-- <p class="success">Bestelling is succesvol geplaatst!</p>');
         },
         error: (json) => {
-          $('#checkout .order-status').addClass('error');
-          $('#checkout .order-status').removeClass('empty');
-          $('#checkout .order-status').removeClass('error');
+          $('#checkout .order-status').html('<p class="error">Er is een fout opgetreden!</p>');
         }
       });
     }

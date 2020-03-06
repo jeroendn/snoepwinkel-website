@@ -2,51 +2,36 @@
 
 #checkout {
   .order-status {
-    align-items: center;
-    background: transparant;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 500ms ease;
-    transition: background-color 500ms ease;
     width: 100%;
 
-    &.success, &.error, &.empty {
-      max-height: 100px;
-    }
-
-    &.success {
-      background: $green;
-
-      p.success {
-        display: block;
-      }
-    }
-
-    &.error {
-      background: #f00;
-
-      p.error {
-        display: block;
-      }
-    }
-
-    &.empty {
-      background: #ff9000;
-
-      p.empty {
-        display: block;
-      }
-    }
-
     p {
+      align-items: center;
+      background: transparant;
+      border-radius: 4px;
       color: #fff;
       display: none;
       font-weight: bold;
+      height: 100%;
+      justify-content: center;
       margin-bottom: 0;
+      overflow: hidden;
       padding: 15px;
+      width: 100%;
+
+      &.success {
+        background: $green;
+        display: flex;
+      }
+
+      &.empty {
+        background: #ff9000;
+        display: flex;
+      }
+
+      &.error {
+        background: #f00;
+        display: flex;
+      }
     }
   }
 

@@ -26,11 +26,7 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
     <main id="checkout" class="page-content">
       <section class="container mt-5 content-box">
         <h3>Plaats uw bestelling</h3>
-        <div class="order-status">
-          <p class="success">Bestelling is succesvol geplaatst!</p>
-          <p class="error">Er is een fout opgetreden!</p>
-          <p class="empty">Er zijn nog lege velden!</p>
-        </div>
+        <div class="order-status"></div>
         <form class="checkout-form" action="index.html" method="post">
           <p>Bestel gegevens:</p>
           <input type="text" name="name" placeholder="Naam"></input>
