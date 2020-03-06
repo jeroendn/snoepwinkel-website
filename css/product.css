@@ -24,7 +24,9 @@
 
 #product-page .product-details .add-to-cart-wrapper .row.product-quantity input[type="number"] {
   padding-left: 10px;
-  width: 60px;
+  display: inline-block;
+  width: unset;
+  margin-bottom: 0;
 }
 
 #product-page .product-details .add-to-cart-wrapper .row.product-cart-button a {

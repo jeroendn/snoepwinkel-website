@@ -47,7 +47,7 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
                 </div>
                 <div class="row add-to-cart-wrapper">
                   <div class="row mb-3 product-quantity">
-                    <input type="number" id="quantity" name="quantity" min="1" max="99" value="1">
+                    <input class="form-control" type="number" id="quantity" name="quantity" min="1" max="99" value="1">
                   </div>
                   <div class="row mb-3 product-cart-button">
                     <?php include_once __DIR__ . '../../php/template_parts/shop_btn.php' ?>

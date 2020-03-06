@@ -19,6 +19,10 @@ html, body {
   font-weight: bold;
 }
 
+.form-control {
+  margin-bottom: 10px;
+}
+
 #home-page a.btn.btn-lg.btn-block {
   font-weight: bold;
   font-size: 30px;

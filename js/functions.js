@@ -17,5 +17,5 @@ function update_cart_totals() {
     }
   });
 
-  $('#cart .total-price').html('&#x20ac ' + total.toFixed(2));
+  $('#cart .total-price').html('Totaal: &#x20ac ' + total.toFixed(2));
 };

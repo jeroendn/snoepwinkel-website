@@ -25,6 +25,11 @@
   user-select: none;
 }
 
+#cart #cart-items .cart-item .quantity input {
+  display: inline-block;
+  width: unset;
+}
+
 #cart #cart-items .cart-item .quantity input::-webkit-outer-spin-button, #cart #cart-items .cart-item .quantity input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }

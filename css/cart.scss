@@ -28,6 +28,9 @@
         user-select: none;
 
         input {
+          display: inline-block;
+          width: unset;
+
           &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
           -webkit-appearance: none;
           }

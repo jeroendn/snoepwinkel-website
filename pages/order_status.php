@@ -17,11 +17,11 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
 
     <main id="order-status" class="page-content">
       <section class="container mt-5 content-box">
-        <h3>Bekijk uw bestelstatus</h3>
+        <h3>Bekijk uw bestelling</h3>
         <form class="status-form" action="index.html" method="post">
-          <input type="text" name="mail" placeholder="E-mail"></input>
-          <input type="number" name="order_id" placeholder="Bestelnummer"></input>
-          <a class="btn btn-primary text-light bg-danger order-status-btn red-btn">Bekijk status</a>
+          <input class="form-control" type="text" name="mail" placeholder="E-mail"></input>
+          <input class="form-control" type="number" name="order_id" placeholder="Bestelnummer"></input>
+          <a class="btn btn-primary text-light bg-danger order-status-btn red-btn">Bekijk bestelling</a>
         </form>
         <div class="order-status">
           <?php

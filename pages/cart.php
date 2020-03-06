@@ -22,32 +22,37 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
           <div id="cart-items" class="col-sm-6 content-box">
             <h3>Uw winkelwagen</h3>
             <?php
-            $product_count = 0;
+            if (!empty($_SESSION['cart'])) {
+              $product_count = 0;
 
-            // echo every product in cart session
-            foreach ($_SESSION['cart'] as $cart_item) {
-              $sql = "SELECT * FROM product WHERE product_id = " . $cart_item['p_id'];
-              $stmt = $conn->prepare($sql);
-              $stmt->execute();
-              $the_product = $stmt->fetchAll(PDO::FETCH_ASSOC);
+              // echo every product in cart session
+              foreach ($_SESSION['cart'] as $cart_item) {
+                $sql = "SELECT * FROM product WHERE product_id = " . $cart_item['p_id'];
+                $stmt = $conn->prepare($sql);
+                $stmt->execute();
+                $the_product = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-              foreach ($the_product as $product) {
-                echo '
-                <div class="cart-item">
-                  <img src="' .  $product['product_img'] . '"></img>
-                  <p class="title">' . $product['product_name'] . '</p>
-                  <div class="quantity">
-                    <span class="qty-min"></span>
-                    <input type="number" id="quantity" name="quantity" min="1" max="99" value="' . $cart_item['p_qty'] . '" readonly>
-                    <span class="qty-plus"></span>
-                  </div>
-                  <p class="price">' . $product['product_price'] . '</p>
-                  <span class="delete"></span>
-                  <input type="hidden" data="' . $product['product_id'] . '"></input>
-                </div>';
+                foreach ($the_product as $product) {
+                  echo '
+                  <div class="cart-item">
+                    <img src="' .  $product['product_img'] . '"></img>
+                    <p class="title">' . $product['product_name'] . '</p>
+                    <div class="quantity">
+                      <span class="qty-min"></span>
+                      <input class="form-control" type="number" id="quantity" name="quantity" min="1" max="99" value="' . $cart_item['p_qty'] . '" readonly>
+                      <span class="qty-plus"></span>
+                    </div>
+                    <p class="price">' . $product['product_price'] . '</p>
+                    <span class="delete"></span>
+                    <input type="hidden" data="' . $product['product_id'] . '"></input>
+                  </div>';
+                }
+
+                $product_count++;
               }
-
-              $product_count++;
+            }
+            else {
+              echo '<h6>Uw winkelwagen is nog leeg.</h6>';
             }
             ?>
           </div>
