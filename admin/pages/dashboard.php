@@ -5,23 +5,23 @@ include_once '../php/session.php';
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Dashboard</title>
     <meta name="description" content=""/>
-    <?php include '../php/head.inc.php' ?>
+    <?php include_once '../php/head.php' ?>
   </head>
 
   <body>
     <!-- header -->
-    <?php include '../php/header.inc.php' ?>
+    <?php include_once '../php/header.php' ?>
 
-    <main id="" class="page-content">
+    <main id="dashboard" class="page-content">
       dashboard
     </main>
 
     <!-- footer -->
-    <?php include '../php/footer.inc.php' ?>
+    <?php include_once '../php/footer.php' ?>
 
     <!-- scripts -->
-    <?php include '../php/js.inc.php' ?>
+    <?php include_once '../php/js_include.php' ?>
   </body>
 </html>
