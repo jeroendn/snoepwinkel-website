@@ -23,6 +23,18 @@ html, body {
   margin-bottom: 10px;
 }
 
+.page-title .back-btn {
+  text-decoration: none;
+}
+
+.page-title .back-btn:before {
+  content: '\f053';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 700;
+  font-size: 15px;
+  margin-right: 10px;
+}
+
 #home-page a.btn.btn-lg.btn-block {
   font-weight: bold;
   font-size: 30px;

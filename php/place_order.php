@@ -4,6 +4,7 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
 
 if (empty($_SESSION['cart'])) {
   echo 'Winkelwagen is nog leeg!';
+  header('Location: ../cart');
   return;
 }
 
@@ -78,5 +79,8 @@ foreach ($_SESSION['cart'] as $cart_item) {
     $stmt->execute();
   }
 }
+
+// clear cart
+unset($_SESSION['cart']);
 
 echo $order_id;

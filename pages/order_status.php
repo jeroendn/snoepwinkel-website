@@ -26,7 +26,7 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
         <div class="order-status">
           <?php
           if (empty($_SESSION['user_mail']) || empty($_SESSION['order_id'])) {
-            echo '<h6>Vul uw e-mail en bestelnummer in om uw bestelling te zien.</h6>';
+            echo '<div class="alert alert-info mt-3">Vul uw e-mail en bestelnummer in om uw bestelling te zien.</div>';
           }
           else {
             $sql = "SELECT * FROM (orders INNER JOIN account ON orders.account_id = account.account_id ) WHERE order_id = '" . $_SESSION['order_id'] . "' AND account_mail = '" . $_SESSION['user_mail'] . "' LIMIT 1";
@@ -82,7 +82,7 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
               unset($_SESSION['order_id']);
             }
             else {
-              echo '<h6>Er is geen bestelling aan deze gegevens gekoppeld!</h6>';
+              echo '<div class="alert alert-warning mt-3">Er is geen bestelling aan deze gegevens gekoppeld!</div>';
             }
           }
           ?>

@@ -16,7 +16,10 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
     <?php include_once __DIR__ . '../../php/header.inc.php' ?>
 
     <main id="checkout" class="page-content">
-      <section class="container mt-5 content-box">
+      <div class="page-title container mt-4">
+        <a href="cart" class="back-btn">Winkelwagen</a>
+      </div>
+      <section class="container mt-4 content-box">
         <h3>Plaats uw bestelling</h3>
         <div class="order-status"></div>
         <form class="checkout-form" action="index.html" method="post">
@@ -44,11 +47,11 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
                 $price_totals = $price_totals + $product['product_price'] * $cart_item['p_qty'];
               }
             }
-            echo '<p class="totals">Totaal: &#x20ac ' . round($price_totals, 2) . '</p>';
+            echo '<p class="totals">Totaalbedrag: &#x20ac ' . round($price_totals, 2) . '</p>';
             $_SESSION['totals'] = $price_totals;
           }
           else {
-            echo '<p>U heeft geen items in uw winkelwagen!</p>';
+            header('Location: cart');
           }
           ?>
 

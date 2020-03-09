@@ -25,6 +25,20 @@ html, body {
   margin-bottom: 10px;
 }
 
+.page-title {
+  .back-btn {
+    text-decoration: none;
+
+    &:before {
+      content: '\f053';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 700;
+      font-size: 15px;
+      margin-right: 10px;
+    }
+  }
+}
+
 // #background-images {
 //   position: absolute;
 //   z-index: 0;
