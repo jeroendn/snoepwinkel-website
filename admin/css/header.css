@@ -1,0 +1,19 @@
+@import url(../../css/header.css);
+header#header {
+  padding-right: 10%;
+  padding-left: 10%;
+  background-color: #333;
+}
+
+header#header #nav-wrapper {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+header#header #nav-wrapper ul.menu {
+  padding-left: 0;
+}
+
+header#header #nav-wrapper ul.menu#menu-right {
+  margin-right: 0;
+}

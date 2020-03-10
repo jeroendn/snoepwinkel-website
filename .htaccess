@@ -19,8 +19,10 @@ RewriteRule ^product$ pages/product.php
 RewriteRule ^cart$ pages/cart.php
 RewriteRule ^checkout$ pages/checkout.php
 RewriteRule ^order_status$ pages/order_status.php
+
 RewriteRule ^beheer$ admin/pages/dashboard.php
 RewriteRule ^beheer/login$ admin/pages/login.php
 RewriteRule ^beheer/dashboard$ admin/pages/dashboard.php
+RewriteRule ^beheer/producten$ admin/pages/producten.php
 
 DirectoryIndex index.php

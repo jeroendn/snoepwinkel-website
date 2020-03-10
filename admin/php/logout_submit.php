@@ -1,6 +1,4 @@
 <?php
 session_start();
-session_unset();
-session_destroy();
-header("Location: ../login");
-?>
+unset($_SESSION['user_id']);
+header("Location: ../../beheer/dashboard");

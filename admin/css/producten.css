@@ -1,0 +1,7 @@
+#dashboard .card {
+  width: 100% !important;
+}
+
+#dashboard .card img {
+  max-height: 100px;
+}

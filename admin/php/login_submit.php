@@ -1,55 +1,20 @@
 <?php
-if (isset($_POST['login-submit'])) {
+session_start();
+include_once '../../php/dbconnection.inc.php';
 
-	require '../../php/dbconnection.inc.php';
+if ($_POST['mail'] != '' && $_POST['password'] != '') {
 
-	$username = $_POST['username'];
-	$password = $_POST['password'];
+	$sql = "SELECT * FROM account WHERE account_mail=:mail";
+	$stmt = $conn->prepare($sql);
+	$stmt->bindParam(':mail', $_POST['mail'], PDO::PARAM_STR);
+	$stmt->execute();
+	$account = $stmt->fetch(PDO::FETCH_ASSOC);
 
-	if (empty($username) || empty($password)) {
-		header("Location: ../login/index.php?error=emtyfieldslogin");
-		exit();
+	if (password_verify($_POST['password'], $account['account_password'])) {
+		$_SESSION['user_id'] = $account['account_id'];
 	}
-	else {
-		try {
-			$sql = "SELECT * FROM user WHERE username=:username AND rank_id = 1";
-			$stmt = $conn->prepare($sql);
-			$stmt->bindParam(':username', $username, PDO::PARAM_STR);
-			$stmt->execute();
-		}
-		catch (PDOException $e) {
-			header("Location: ../login/index.php?error=sqlerror");
-			exit();
-		}
 
-		if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-			$passwordCheck = password_verify($password, $row['password']);
-			if ($passwordCheck == false) {
-				header("Location: ../login/index.php?error=wrongpassword");
-				exit();
-			}
-			else if ($passwordCheck == true) {
-				//Alles na het inloggen
-				session_start();
-				$_SESSION['userId'] = $row['user_id'];
-				$_SESSION['username'] = $row['username'];
+	return;
+}
 
-				header("Location: ../login/index.php?login=success");
-				exit();
-			}
-			else {
-				header("Location: ../login/index.php?error=wrongpassword");
-				exit();
-			}
-		}
-		else {
-			header("Location: ../login/index.php?error=nouserfoundornotadmin");
-			exit();
-		}
-	}
-}
-else {
-	header("Location: ../login/index.php");
-	exit();
-}
-?>
+return;
