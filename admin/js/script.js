@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $("#login-form").submit(function(e) {
+  $('#login-form').submit(function(e) {
     var request;
     e.preventDefault();
 
@@ -28,6 +28,32 @@ $(document).ready(function() {
       inputs.prop("disabled", false);
     });
 
+  });
+
+  $('#dashboard .card .btn-delete').on('click', function() {
+    let product_id = $(this).parent().find('input[type="hidden"]').attr('data');
+
+    $.ajax({
+      type: "POST",
+      url: '../admin/php/delete_product.php',
+      data: { product_id: product_id },
+      success: (json) => {
+        $(this).parent().parent().fadeOut('slow');
+      }
+    });
+  });
+
+  $('#dashboard .card .btn-update').on('click', function() {
+    let product_id = $(this).parent().find('input[type="hidden"]').attr('data');
+
+    $.ajax({
+      type: "POST",
+      url: '../admin/php/update_product.php',
+      data: { product_id: product_id },
+      success: (json) => {
+
+      }
+    });
   });
 
 });

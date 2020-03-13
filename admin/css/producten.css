@@ -1,7 +1,28 @@
 #dashboard .card {
   width: 100% !important;
+  flex-flow: row wrap;
 }
 
-#dashboard .card img {
-  max-height: 100px;
+#dashboard .card .img {
+  flex: 0 0 25%;
+  max-width: 25%;
+  object-fit: cover;
+}
+
+#dashboard .card .card-body {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+#dashboard .card .card-body .title {
+  flex: 0 0 80%;
+  max-width: 80%;
+}
+
+#dashboard .card .card-body .price {
+  display: flex;
+}
+
+#dashboard .card .card-body .price input::-webkit-outer-spin-button, #dashboard .card .card-body .price input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }

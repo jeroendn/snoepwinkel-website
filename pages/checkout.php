@@ -24,13 +24,13 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
         <div class="order-status"></div>
         <form class="checkout-form" action="index.html" method="post">
           <p>Bestel gegevens:</p>
-          <input class="form-control" type="text" name="name" placeholder="Naam"></input>
-          <input class="form-control" type="text" name="mail" placeholder="E-mail"></input>
+          <input class="form-control" type="text" name="name" placeholder="Naam">
+          <input class="form-control" type="text" name="mail" placeholder="E-mail">
           <p>Ontvangst adres:</p>
-          <input class="form-control" type="text" name="city" placeholder="Plaats"></input>
-          <input class="form-control" type="text" name="zip" placeholder="Postcode"></input>
-          <input class="form-control" type="text" name="street" placeholder="Straatnaam"></input>
-          <input class="form-control" type="number" name="street_number" placeholder="Huisnummer"></input>
+          <input class="form-control" type="text" name="city" placeholder="Plaats">
+          <input class="form-control" type="text" name="zip" placeholder="Postcode">
+          <input class="form-control" type="text" name="street" placeholder="Straatnaam">
+          <input class="form-control" type="number" name="street_number" placeholder="Huisnummer">
 
           <?php
           // calc total price with prices from db

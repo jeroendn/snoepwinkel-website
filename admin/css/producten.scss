@@ -1,9 +1,32 @@
 #dashboard {
   .card {
     width: 100% !important;
+    flex-flow: row wrap;
 
-    img {
-      max-height: 100px;
+    .img {
+      flex: 0 0 25%;
+      max-width: 25%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      flex: 0 0 75%;
+      max-width: 75%;
+
+      .title {
+        flex: 0 0 80%;
+        max-width: 80%;
+      }
+
+      .price {
+        display: flex;
+
+        input {
+          &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+          }
+        }
+      }
     }
   }
 }

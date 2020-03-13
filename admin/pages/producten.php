@@ -24,13 +24,25 @@ include_once '../php/session.php';
 
       foreach ($row_product as $product) {
         echo '
-        <div id="product-' . $product['product_id'] . '" class="card" style="width: 18rem;">
-          <img src="' . $product['product_img'] . '" class="card-img-top" alt="...">
+        <div id="product-' . $product['product_id'] . '" class="card">
+          <div class="img">
+            <img src="' . $product['product_img'] . '" class="card-img-top">
+            <input class="form-control" type="text" value="' . $product['product_img'] . '" placeholder="URL van afbeelding">
+          </div>
           <div class="card-body">
-            <h5 class="card-title">' . $product['product_name'] . '</h5>
-            <h6 class="card-subtitle mb-2">&#8364;' . $product['product_price'] . ' per stuk</h6>
-            <p class="card-text">' . substr($product['product_desc'], 0, 180) . '...</p>
-            <a href="product?id=' . $product['product_id'] . '" class="btn btn-primary">Bekijk</a>
+            <div class="title">
+              <h5 class="card-title">Bewerk: ' . $product['product_name'] . '</h5>
+              <input class="form-control" type="text" value="' . $product['product_name'] . '" placeholder="' . $product['product_name'] . '">
+            </div>
+            <div class="price">
+              <span>&#8364</span>
+              <input class="form-control" type="number" value="' . $product['product_price'] . '" placeholder="' . $product['product_price'] . '">
+              <span>Per stuk</span>
+            </div>
+            <textarea class="form-control" placeholder="Beschrijf je product.">' . $product['product_desc'] . '</textarea>
+            <button class="btn btn-danger btn-update">Update</button>
+            <button class="btn btn-danger btn-delete">Verwijder</button>
+            <input type="hidden" data="' . $product['product_id'] . '">
           </div>
         </div>
         ';
