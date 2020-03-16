@@ -1,28 +1,66 @@
 #dashboard .card {
   width: 100% !important;
   flex-flow: row wrap;
+  margin-bottom: 5px;
+}
+
+#dashboard .card input {
+  margin-bottom: 5px;
 }
 
 #dashboard .card .img {
-  flex: 0 0 25%;
-  max-width: 25%;
-  object-fit: cover;
+  flex: 0 0 20%;
+  max-width: 20%;
+  display: flex;
+  flex-flow: wrap;
+}
+
+#dashboard .card .img img {
+  object-fit: contain;
+  height: calc(100% - 38px);
 }
 
 #dashboard .card .card-body {
-  flex: 0 0 75%;
-  max-width: 75%;
-}
-
-#dashboard .card .card-body .title {
-  flex: 0 0 80%;
-  max-width: 80%;
+  flex: 0 0 70%;
+  max-width: 70%;
 }
 
 #dashboard .card .card-body .price {
   display: flex;
+  align-items: center;
+}
+
+#dashboard .card .card-body .price span {
+  white-space: nowrap;
+}
+
+#dashboard .card .card-body .price span:first-child {
+  margin-right: 5px;
+}
+
+#dashboard .card .card-body .price span:last-child {
+  margin-left: 5px;
+}
+
+#dashboard .card .card-body .price input {
+  max-width: 100px;
 }
 
 #dashboard .card .card-body .price input::-webkit-outer-spin-button, #dashboard .card .card-body .price input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+}
+
+#dashboard .card .card-body textarea {
+  min-height: 90px;
+}
+
+#dashboard .card .buttons {
+  flex: 0 0 10%;
+  max-width: 10%;
+  display: flex;
+  flex-flow: column;
+}
+
+#dashboard .card .buttons button {
+  flex: auto;
 }

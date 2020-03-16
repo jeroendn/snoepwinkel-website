@@ -40,7 +40,9 @@ include_once '../php/session.php';
               <span>Per stuk</span>
             </div>
             <textarea class="form-control" placeholder="Beschrijf je product.">' . $product['product_desc'] . '</textarea>
-            <button class="btn btn-danger btn-update">Update</button>
+          </div>
+          <div class="buttons">
+            <button class="btn btn-primary btn-update">Update</button>
             <button class="btn btn-danger btn-delete">Verwijder</button>
             <input type="hidden" data="' . $product['product_id'] . '">
           </div>

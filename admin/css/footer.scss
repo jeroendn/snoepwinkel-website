@@ -1,0 +1,10 @@
+@import '../../css/footer.css';
+@import '../../css/var.scss';
+
+footer#footer {
+  background: $dark;
+
+  #bottom-bar {
+    background: $brown;
+  }
+}

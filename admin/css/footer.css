@@ -1,0 +1,8 @@
+@import url(../../css/footer.css);
+footer#footer {
+  background: #333;
+}
+
+footer#footer #bottom-bar {
+  background: #7e685a;
+}

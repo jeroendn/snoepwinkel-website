@@ -2,30 +2,69 @@
   .card {
     width: 100% !important;
     flex-flow: row wrap;
+    margin-bottom: 5px;
+
+    input {
+      margin-bottom: 5px;
+    }
 
     .img {
-      flex: 0 0 25%;
-      max-width: 25%;
-      object-fit: cover;
+      flex: 0 0 20%;
+      max-width: 20%;
+      display: flex;
+      flex-flow: wrap;
+
+      img {
+        object-fit: contain;
+        height: calc(100% - 38px);
+      }
     }
 
     .card-body {
-      flex: 0 0 75%;
-      max-width: 75%;
+      flex: 0 0 70%;
+      max-width: 70%;
 
       .title {
-        flex: 0 0 80%;
-        max-width: 80%;
       }
 
       .price {
         display: flex;
+        align-items: center;
+
+        span {
+          white-space: nowrap;
+
+          &:first-child {
+            margin-right: 5px;
+          }
+
+          &:last-child {
+            margin-left: 5px;
+          }
+        }
 
         input {
+          max-width: 100px;
+
           &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
             -webkit-appearance: none;
           }
         }
+      }
+
+      textarea {
+        min-height: 90px;
+      }
+    }
+
+    .buttons {
+      flex: 0 0 10%;
+      max-width: 10%;
+      display: flex;
+      flex-flow: column;
+
+      button {
+        flex: auto;
       }
     }
   }
