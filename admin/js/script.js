@@ -87,8 +87,12 @@ $(document).ready(function() {
         if (product_name != '') {
           $('#product-add').slideUp();
           $(this).parent().find('.error').remove();
+          $(this).parent().find('.title input').val('');
+          $(this).parent().find('.price input').val('');
+          $(this).parent().find('.img input').val('');
+          $(this).parent().find('textarea').val('');
         }
-        else {
+        else if (!$(this).parent().find('.error').length) {
           $(this).parent().prepend('<p class="error">Naam is verplicht!</p>');
         }
       }
