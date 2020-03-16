@@ -4,7 +4,6 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
 
 if (empty($_SESSION['cart'])) {
   echo 'Winkelwagen is nog leeg!';
-  header('Location: ../cart');
   return;
 }
 

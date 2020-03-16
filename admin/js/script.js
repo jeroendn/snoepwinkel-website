@@ -30,7 +30,7 @@ $(document).ready(function() {
 
   });
 
-  $('#dashboard .card .btn-delete').on('click', function() {
+  $('#products .card .btn-delete').on('click', function() {
     let product_id = $(this).parent().find('input[type="hidden"]').attr('data');
 
     $.ajax({
@@ -43,7 +43,7 @@ $(document).ready(function() {
     });
   });
 
-  $('#dashboard .card .btn-update').on('click', function() {
+  $('#products .card .btn-update').on('click', function() {
     let product_id = $(this).parent().find('input[type="hidden"]').attr('data');
     let product_name = $(this).parent().parent().find('.title input').val();
     let product_price = $(this).parent().parent().find('.price input').val();
@@ -65,6 +65,32 @@ $(document).ready(function() {
         setTimeout(function() {
           this_btn.parent().parent().find('.title .card-title').html('Bewerk: ' + product_name).css('color', 'unset');
         }, 10000);
+      }
+    });
+  });
+
+  $('.btn-add').on('click', function() {
+    $('#product-add').slideToggle();
+  });
+
+  $('#products #product-add .btn-add-submit').on('click', function() {
+    let product_name = $(this).parent().find('.title input').val();
+    let product_price = $(this).parent().find('.price input').val();
+    let product_img = $(this).parent().find('.img input').val();
+    let product_desc = $(this).parent().find('textarea').val();
+
+    $.ajax({
+      type: "POST",
+      url: '../admin/php/insert_product.php',
+      data: { product_name: product_name, product_price: product_price, product_img: product_img, product_desc: product_desc },
+      success: (json) => {
+        if (product_name != '') {
+          $('#product-add').slideUp();
+          $(this).parent().find('.error').remove();
+        }
+        else {
+          $(this).parent().prepend('<p class="error">Naam is verplicht!</p>');
+        }
       }
     });
   });
