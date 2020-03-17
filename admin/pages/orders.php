@@ -17,7 +17,7 @@ include_once '../php/session.php';
     <main id="orders" class="page-content container mt-5">
       <?php
       // get each order
-      $sql = "SELECT * FROM (orders INNER JOIN account ON orders.account_id = account.account_id )";
+      $sql = "SELECT * FROM (orders INNER JOIN account ON orders.account_id = account.account_id ) ORDER BY order_date DESC";
       $stmt = $conn->prepare($sql);
       $stmt->execute();
       $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -40,22 +40,28 @@ include_once '../php/session.php';
 
             echo '
             <h5>Status</h5>
-            <p>' . $the_order[0]['order_status_name'] . '</p>';
+            <p style="margin-bottom: 5px;">' . $the_order[0]['order_status_name'] . '</p>
+            <h6>wijzig status:</h6>
+            <select style="margin-bottom: 10px;">
+            ';
 
-            $sql = "SELECT * FROM order_status";
+            $sql = "SELECT * FROM order_status ORDER BY order_status_name ASC";
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $statuses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($statuses as $status) {
-              echo $status['order_status_name'];
+              echo '<option val="' . $status['order_status_id'] . '">' . $status['order_status_name'] . '</option>';
             }
 
             echo '
+            </select>
+            <button class="btn btn-warning">Wijzig</button>
             <h5>Totaalprijs:</h5>
             <p>&#8364;' . $the_order[0]['order_total_price'] . '</p>
             <h5>Datum geplaatst:</h5>
             <p>' . date("d/M/Y H:i:s", strtotime($the_order[0]['order_date'])) . '</p>
+            <input type="hidden" id="' . $the_order[0]['order_id'] . '">
           </div>
           ';
 

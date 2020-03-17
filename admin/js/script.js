@@ -113,4 +113,20 @@ $(document).ready(function() {
     });
   });
 
+  $('#orders .btn-warning').on('click', function() {
+    let order_status = $(this).prev().children("option:selected").attr('val');
+    let order_id = $(this).parent().find('input[type="hidden"]').attr('id');
+
+    $.ajax({
+      type: "POST",
+      url: '../admin/php/update_order_status.php',
+      data: { order_status: order_status, order_id: order_id },
+      success: (json) => {
+        $(this).parent().find('h6').prev().html(
+          $(this).prev().children("option:selected").val()
+        );
+      }
+    });
+  });
+
 });

@@ -9,6 +9,14 @@
 
   .order {
     display: none;
+
+    .order-info {
+      .btn-warning {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: -5px;
+      }
+    }
   }
 
   .btn-close-all {

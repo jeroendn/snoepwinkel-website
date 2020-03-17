@@ -47,6 +47,12 @@
   display: none;
 }
 
+#orders .order .order-info .btn-warning {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: -5px;
+}
+
 #orders .btn-close-all {
   position: fixed;
   left: 1%;
