@@ -1,6 +1,7 @@
 @import 'var.scss';
 
-#order-status {
+// ID orders is for the admin order page overview
+#order-status, #orders {
   form.status-form {
     input[type="number"]::-webkit-inner-spin-button {
       -webkit-appearance: none;

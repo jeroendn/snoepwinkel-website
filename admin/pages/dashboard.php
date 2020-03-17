@@ -5,7 +5,7 @@ include_once '../php/session.php';
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Dashboard</title>
+    <title>Statistieken</title>
     <meta name="description" content=""/>
     <?php include_once  __DIR__ . '../../php/head.php' ?>
   </head>

@@ -30,6 +30,8 @@ $(document).ready(function() {
 
   });
 
+  // product management
+
   $('#products .card .btn-delete').on('click', function() {
     let product_id = $(this).parent().find('input[type="hidden"]').attr('data');
 
@@ -96,6 +98,18 @@ $(document).ready(function() {
           $(this).parent().prepend('<p class="error">Naam is verplicht!</p>');
         }
       }
+    });
+  });
+
+  // order management
+
+  $('#orders .btn-show-order').on('click', function() {
+    $(this).next().slideToggle();
+  });
+
+  $('#orders .btn-close-all').on('click', function() {
+    $('.order').each(function() {
+      $(this).slideUp();
     });
   });
 

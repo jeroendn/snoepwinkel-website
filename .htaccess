@@ -24,5 +24,6 @@ RewriteRule ^beheer$ admin/pages/dashboard.php
 RewriteRule ^beheer/login$ admin/pages/login.php
 RewriteRule ^beheer/dashboard$ admin/pages/dashboard.php
 RewriteRule ^beheer/producten$ admin/pages/producten.php
+RewriteRule ^beheer/bestellingen$ admin/pages/orders.php
 
 DirectoryIndex index.php

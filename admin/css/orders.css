@@ -36,3 +36,19 @@
   max-width: calc(40% - 100px);
   text-align: right;
 }
+
+#orders .btn-show-order {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+#orders .order {
+  display: none;
+}
+
+#orders .btn-close-all {
+  position: fixed;
+  left: 1%;
+  bottom: 1%;
+}

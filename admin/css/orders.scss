@@ -1,0 +1,19 @@
+@import '../../css/order_status.scss';
+
+#orders {
+  .btn-show-order {
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+
+  .order {
+    display: none;
+  }
+
+  .btn-close-all {
+    position: fixed;
+    left: 1%;
+    bottom: 1%;
+  }
+}
