@@ -14,7 +14,7 @@ $(document).ready(function() {
       return;
     }
     else if (zip.length != 6) {
-      $('#checkout .order-status').html('<p class="error">Er is een fout opgetreden!</p>');
+      $('#checkout .order-status').html('<p class="error">Uw postcode is niet toegestaan!</p>');
       return;
     }
     else {
@@ -26,7 +26,7 @@ $(document).ready(function() {
             $('#checkout .order-status').html('<p class="success">Bestelling is succesvol geplaatst!<br>Uw bestelnummer is: ' + data + '<br>Onthoudt deze goed!</p>');
         },
         error: (json) => {
-          $('#checkout .order-status').html('<p class="error">Er is een fout opgetreden!</p>');
+          $('#checkout .order-status').html('<p class="error">Er is een onbekende fout opgetreden!</p>');
         }
       });
     }

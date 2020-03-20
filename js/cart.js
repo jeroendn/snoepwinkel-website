@@ -55,9 +55,20 @@ $(document).ready(function() {
       url: 'php/delete_cart.php' + '?id=' + product_id,
       success: (json) => {
         $(this).parent().fadeOut('slow');
+        let this_btn = $(this);
 
         setTimeout(function(){
+          this_btn.parent().remove();
           update_cart_totals();
+
+          let item_count = 0;
+          $('.cart-item').each(function() {
+            item_count = item_count + 1;
+          });
+
+          if (item_count == 0) {
+            $('.btn.red-btn').text('Uw winkelwagen is leeg').css('opacity', '.5').attr('href', '#!');
+          }
         }, 1000);
       }
     });

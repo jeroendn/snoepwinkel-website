@@ -60,7 +60,14 @@ include_once __DIR__ . '../../php/dbconnection.inc.php';
           <div id="cart-summary" class="col-sm-6 content-box">
             <p class="total-price">0</p>
             <!-- direct on click via javascript to send a confirmation with it in the session -->
-            <a href="checkout" class="btn btn-primary text-light bg-danger cart-payment-button red-btn">Naar betalen</a>
+            <?php
+            if (!empty($_SESSION['cart'])) {
+            ?><a href="checkout" class="btn btn-primary text-light bg-danger cart-payment-button red-btn">Naar betalen</a><?php
+            }
+            else {
+            ?><a class="btn btn-primary text-light bg-danger red-btn" style="opacity: .5;">Uw winkelwagen is leeg</a><?php
+            }
+            ?>
           </div>
 
         </div>
